@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport", content = "width=device-width, initial-scale = 1.0">
+        <meta name="description", content="Calculator for all formulas!">
+        <link rel = "stylesheet", href="prefect.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+
+        <script src="https://kit.fontawesome.com/b94b3d5f5c.js" crossorigin="anonymous"></script>
+        <script src="./script.js"></script>
+        <title>NIS Prefect Portal</title>
+    </head>
+    <body>
+        <div class="sidebar">
+            <div class="logo">
+                <div class="img">
+                    <img src="nis_logo.jpg" alt="">
+                </div>
+                <div class="title">
+                    <h1>Prefect Portal</h1>
+                </div>
+            </div>
+            
+            <ul class="main">
+                <li class="active" id="actElement">
+                    <a href="prefect.html">
+                        <i class='bx bxs-dashboard'></i>
+                        <span>Dashbaord</span>
+                    </a>
+                </li>
+                <li id="actElement2">
+                    <a href="announcement2.html">
+                        <i class='bx bxs-news'></i>
+                        <span>Announcements</span>
+                    </a>
+                </li>
+                <li id="actElement2">
+                    <a href="https://app.slack.com/client/T07C1DMLZU1/C07CBHGDWEL" target="_blank">
+                        <i class='bx bx-conversation'></i>
+                        <span>Chat</span>
+                    </a>
+                </li>
+                <li id="actElement3">
+                    <a href="calendar.html">
+                        <i class='bx bxs-calendar' ></i>
+                        <span>Calendar</span>
+                    </a>
+                </li>
+                <li class="logout">
+                    <a href="#">
+                        <i class='bx bx-log-out'></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="d-content">
+            <div class="header-wrapper">
+                <div class="user-info">
+                    <img src="user_dp.jpg" alt="/">
+                </div>
+                <div class="header-title">
+                    <h1 id="Name">-</h1>
+                    <h3 id="Status">-</h3>
+                </div>
+                <div class="joke">
+                    <h1 id="Class">Class Allocation: </h1>
+                </div>
+            </div>
+            <div class="first-row">
+                <div class="Duty">
+                    <h2>Your duties:</h2>
+                    <div class="item break">
+                        <div class="icon">
+                            <i class='bx bxs-label' ></i>
+                        </div>
+                        <div class="right">
+                            <div class="info">
+                                <h3 class="duty1"></h3>
+                                <small class="muted-text" id="duty1_week"></small>
+                            </div>
+                            <h5 class="confirm" id="duty1_status"></h5>
+                        </div>
+                    </div>
+                    <div class="item break">
+                        <div class="icon">
+                            <i class='bx bxs-label' ></i>
+                        </div>
+                        <div class="right">
+                            <div class="info">
+                                <h3 class="duty2"></h3>
+                                <small class="muted-text" id="duty2_week"></small>
+                            </div>
+                            <h5 class="confirm" id="duty2_status"></h5>
+                        </div>
+                    </div>
+                    <div class="item break">
+                        <div class="icon">
+                            <i class='bx bxs-label' ></i>
+                        </div>
+                        <div class="right">
+                            <div class="info">
+                                <h3 class="duty3"></h3>
+                                <small class="muted-text" id="duty3_week"></small>
+                            </div>
+                            <h5 class="confirm" id="duty3_status"></h5>
+                        </div>
+                    </div>
+                    <div class="viewBtn">
+                        <button class="viewMore">View all</button>
+                    </div>
+                    
+                </div>
+                
+                <div class="announcements-container">
+                    <div class="main-title-announcements">
+                        <h3><i class="fa-solid fa-bullhorn"></i> Enter announcement here:</h3>
+                    </div>
+                    <form method="post" class="announcement_Form">
+                        <textarea class="announcement_Area" rows="8" cols="95"></textarea>
+                        <br>
+                        <input type="submit" value="Submit" class="announcement_submit">
+                        
+                    </form>
+                </div>
+
+                <div class="detention-list-container">
+                    <div class="detention-list-title">
+                        <h3 id="day_detention">Detention List:</h3>
+                    </div>
+                    <div class="detention-list-wrapper">
+                        <ul>
+                            <!-- <li>
+                                <input type="checkbox" id="sean" class="detention-list-checkbox">
+                                <label>Sean McNally</label>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="upcoming_events">
+                    <h2>Upcoming events:</h2>
+                    <div class="item break">
+                        <div class="right">
+                            <div class="info">
+                                <h3 class="event1">No events!</h3>
+                                <small class="muted-text" id="eventDay1">N/A</small>
+                            </div>
+                            <h5 class="confirm" id="eventTime1">N/A</h5>
+                        </div>
+                    </div>
+                    <div class="item break">
+                        <div class="right">
+                            <div class="info">
+                                <h3 class="event2">No events!</h3>
+                                <small class="muted-text" id="eventDay2">N/A</small>
+                            </div>
+                            <h5 class="confirm" id="eventTime2">N/A</h5>
+                        </div>
+                    </div>
+                    <div class="item break">
+                        <div class="right">
+                            <div class="info">
+                                <h3 class="event2">No events!</h3>
+                                <small class="muted-text" id="eventDay2">N/A</small>
+                            </div>
+                            <h5 class="confirm" id="eventTime2">N/A</h5>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+
+
+            <div class="second-row">
+                <h2>Services:</h2>
+                <div class="Duty2">
+                    <div class="item break">
+                        <div class="right">
+                            <div class="info">
+                                <button class="uniform-btn">Uniform</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item break2">
+                        <div class="right">
+                            <div class="info">
+                                <button class="detention-btn">Detention</button>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="item break3">
+                        <div class="right">
+                            <div class="info">
+                                <button class="sDetention-btn">Saturday Detention</button>
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+        <div class="modal">
+            <div class="close-btn">&times;</div>
+            <div class="form">
+                <h2>What would you like to do?</h2>
+                <ul class="main2">
+                    <li>
+                        <button class="add-uniform">Add a uniform violation</button>
+                    </li>
+                    <li>
+                        <button class="remove_uniform">Remove a uniform violation</span>
+                    </li>
+                    <li>
+                        <button class="view_uniform" id="viewUniform">View all uniform violations</button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="modal2">
+            <div class="modal-content">
+                <h1>Add a uniform violation:</h1>
+                <span class="close-btn2">&times;</span>
+                <form method="POST" class="modal-form" id="addUniform">
+                    <div class="input-box">
+                        <input name="name" type="text" placeholder = "Enter the name" required id="uniformName" class="modal-input">
+                        <div class="result-boxU">
+                        </div>
+                    </div>
+                    
+                    <div class="input-box">
+                        <input name="class" type="text" placeholder = "Enter the class" required id="uniformClass" class="modal-input">
+                    </div>
+                    <div class="input-box">
+                        <input name="class" type="text" placeholder = "Enter the name of the prefect/teacher" required id="authority" class="modal-input">
+                    </div>
+                    <input type="submit" class="modal-input-btn" value="Add">
+                </form>
+            </div>
+        </div>
+
+        <div class="modal3">
+            <div class="modal-content">
+                <h1>Remove a uniform violation:</h1>
+                <span class="close-btn3">&times;</span>
+                <form method="POST" class="modal-form" id="removeUniform">
+                    <div class="input-box">
+                        <input name="name" type="text" placeholder = "Enter the name" required id="reUniformName" class="modal-input">
+                        <div class="result-boxU">
+                        </div>
+                    </div>
+                    
+                    <div class="input-box">
+                        <input name="class" type="text" placeholder = "Enter the class" required id="reUniformClass" class="modal-input">
+                    </div>
+                    <div class="input-box">
+                        <input name="class" type="text" placeholder = "Enter the date (yyyy-mm-dd)" required id="reUniformDate" class="modal-input">
+                    </div>
+
+                    <input type="submit" class="modal-input-btn" value="Remove">
+                </form>
+            </div>
+        </div>
+
+
+        <div class="modal4">
+            <div class="close-btn4">&times;</div>
+            <div class="form">
+                <h2>What would you like to do?</h2>
+                <ul class="main2">
+                    <li>
+                        <button class="add-detention">Add a detention</button>
+                    </li>
+                    <li>
+                        <button class="remove_detention">Remove a detention</button>
+                    </li>
+                    <li>
+                        <button class="view_detention" id="viewDetention">View all detentions</button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="modal7">
+            <div class="close-btn7">&times;</div>
+            <div class="form">
+                <h2>What would you like to do?</h2>
+                <ul class="main2">
+                    <li>
+                        <button class="add-Sdetention">Add a Saturday detention</button>
+                    </li>
+                    <li>
+                        <button class="remove_Sdetention">Remove a Saturday detention</span>
+                    </li>
+                    <li>
+                        <button class="view_detention" id="viewSDetention">View all detentions</button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="modal5">
+            <div class="modal-content">
+                <h1>Add a detention:</h1>
+                <span class="close-btn5">&times;</span>
+                <form action="/" method="GET" class="modal-form" id="addDetention">
+                    <div class="input-box">
+                        <input name="name" type="text" placeholder = "Enter the name" required id="detentionName" class="modal-input">
+                        <div class="result-boxD">
+                        </div>
+                    </div>
+                    
+                    <div class="input-box">
+                        <input name="class" type="text" placeholder = "Enter the class" required id="detentionClass" class="modal-input">
+                    </div>
+                    <div class="input-box">
+                        <input name="class" type="text" placeholder = "Enter the reason" required id="detentionReason" class="modal-input">
+                    </div>
+                    <div class="input-box">
+                        <input name="class" type="text" placeholder = "Enter the name of the prefect/teacher" required id="dt_authority" class="modal-input">
+                    </div>
+                    <input type="submit" class="modal-input-btn" value="Add">
+                </form>
+            </div>
+        </div>
+
+        <div class="modal6">
+            <div class="modal-content">
+                <h1>Remove a detention:</h1>
+                <span class="close-btn6">&times;</span>
+                <form action="/" method="GET" class="modal-form" id="removeDetention">
+                    <div class="input-box">
+                        <input name="class" type="text" placeholder = "Enter the date (yyyy-mm-dd)" required id="reDtDate" class="modal-input">
+                    </div>
+                    <div class="input-box">
+                        <input name="name" type="text" placeholder = "Enter the name" required id="reDtName" class="modal-input">
+                        <div class="result-boxD">
+                        </div>
+                    </div>
+                    
+                    <div class="input-box">
+                        <input name="class" type="text" placeholder = "Enter the class" required id="reDtClass" class="modal-input">
+                    </div>
+                    
+                    <input type="submit" class="modal-input-btn" value="Remove">
+                </form>
+            </div>
+        </div>
+
+
+        <div class="modal8">
+            <div class="modal-content">
+                <h1>Add a Saturday detention:</h1>
+                <span class="close-btn8">&times;</span>
+                <form action="/" method="GET" class="modal-form" id="addSDetention">
+                    <div class="input-box">
+                        <input name="name" type="text" placeholder = "Enter the name" required id="SdetentionName" class="modal-input">
+                        <div class="result-boxSD">
+                        </div>
+                    </div>
+                    
+                    <div class="input-box">
+                        <input name="class" type="text" placeholder = "Enter the class" required id="SdetentionClass" class="modal-input">
+                    </div>
+                    <div class="input-box">
+                        <input name="class" type="text" placeholder = "Enter the reason" required id="SdetentionReason" class="modal-input">
+                    </div>
+                    <div class="input-box">
+                        <input name="class" type="text" placeholder = "Enter the name of the prefect/teacher" required id="Sdt_authority" class="modal-input">
+                    </div>
+                    <input type="submit" class="modal-input-btn" value="Add">
+                </form>
+            </div>
+        </div>
+
+        <div class="modal9">
+            <div class="modal-content">
+                <h1>Remove a Saturday detention:</h1>
+                <span class="close-btn9">&times;</span>
+                <form action="/" method="GET" class="modal-form" id="removeSDetention">
+                    <div class="input-box">
+                        <input name="class" type="text" placeholder = "Enter the date (yyyy-mm-dd)" required id="reSDtDate" class="modal-input">
+                    </div>
+                    <div class="input-box">
+                        <input name="name" type="text" placeholder = "Enter the name" required id="reSDtName" class="modal-input">
+                        <div class="result-boxSD">
+                        </div>
+                    </div>
+                    
+                    <div class="input-box">
+                        <input name="class" type="text" placeholder = "Enter the class" required id="reSDtClass" class="modal-input">
+                    </div>
+                    <input type="submit" class="modal-input-btn" value="Remove">
+                </form>
+            </div>
+        </div>
+        <div class="popupDuty">
+                <span class="close-btnDuty">&times;</span>
+                <!-- <div class="item break">
+                    <div class="icon">
+                        <i class='bx bxs-label' ></i>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3 class="duty1">Break duty</h3>
+                            <small class="muted-text" id="duty1_week">24-10-2024</small>
+                        </div>
+                        <h5 class="confirm" id="duty1_status">Confirmed</h5>
+                    </div>
+                </div>
+                <div class="item break">
+                    <div class="icon">
+                        <i class='bx bxs-label' ></i>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3 class="duty2"></h3>
+                            <small class="muted-text" id="duty2_week"></small>
+                        </div>
+                        <h5 class="confirm" id="duty2_status"></h5>
+                    </div>
+                </div> 
+             -->
+        </div>
+     
+    </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport", content = "width=device-width, initial-scale = 1.0">
+        <meta name="description", content="Calculator for all formulas!">
+        <link rel = "stylesheet", href="prefect.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@400..700&family=Indie+Flower&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/b94b3d5f5c.js" crossorigin="anonymous"></script>
+        <script src="./script.js"></script>
+        <title>Team Announcements</title>
+    </head>
+    <body>
+        <div class="sidebar">
+            <div class="logo">
+                <div class="img">
+                    <img src="nis_logo.jpg" alt="">
+                </div>
+                <div class="title">
+                    <h1>Prefect Portal</h1>
+                </div>
+            </div>
+            
+            <ul class="main">
+                <li  id="actElement">
+                    <a href="prefect.html">
+                        <i class='bx bxs-dashboard'></i>
+                        <span>Dashbaord</span>
+                    </a>
+                </li>
+                <li id="actElement2">
+                    <a href="announcement2.html">
+                        <i class='bx bxs-news'></i>
+                        <span>Announcements</span>
+                    </a>
+                </li>
+                <li id="actElement2">
+                    <a href="https://app.slack.com/client/T07C1DMLZU1/C07CBHGDWEL" target="_blank">
+                        <i class='bx bx-conversation'></i>
+                        <span>Chat</span>
+                    </a>
+                </li>
+                <li class="active" id="actElement3">
+                    <a href="calendar.html">
+                        <i class='bx bxs-calendar' ></i>
+                        <span>Calendar</span>
+                    </a>
+                </li>
+                <li class="logout">
+                    <a href="#">
+                        <i class='bx bx-log-out'></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="left">
+                <div class="calendar">
+                    <div class="month">
+                        <i class='bx bxs-chevron-left prev'></i>
+                        <div class="date">June 2024</div>
+                        <i class='bx bxs-chevron-right next' ></i>
+                    </div>
+                    <div class="weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="days">
+                        
+                    </div>
+                    <div class="quote">
+                        <p class="quoteText"><i><b>"Don't ever be ashamed of anything you did in life. Face it. Fix it. Make it better."</b></i></p>
+                        <p> - Unknown</p>
+                    </div>
+                    <div class="goto-today">
+                        <div class="goto">
+                            <input type="text" placeholder="mm/yyyy" class="date-input">
+                            <button class="goto-btn">go</button>
+                        </div>
+                        <button class="today-btn">today</button>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="today-date">
+                    <div class="event-day">Tue</div>
+                    <div class="event-date">15th June 2024</div>
+                </div>
+                <div class="events">
+                    
+                </div>
+                <div class="add-event-wrapper">
+                    <div class="add-event-header">
+                        <div class="title">Add Event</div>
+                        <i class='bx bx-x close'></i>
+                    </div>
+                    <div class="add-event-body">
+                        <div class="add-event-input">
+                            <input type="text" placeholder="Event name" class="event-name">
+                        </div>
+                        <div class="add-event-input">
+                            <input type="text" placeholder="Event time from" class="event-time-from">
+                        </div>
+                        <div class="add-event-input">
+                            <input type="text" placeholder="Event time to" class="event-time-to">
+                        </div>
+                        <select class="dropdown">
+                            <option value="public" >Public</option>
+                            <option value="private">Private</option>
+                        </select>
+                    </div>
+                    <div class="add-event-footer">
+                        <button class="add-event-btn">add event</button>
+                    </div>
+                </div>
+            </div>
+            <button class="add-event">
+                <i class='bx bx-plus' ></i>
+            </button>
+        </div>
+                    
+    </body>
+</html>
