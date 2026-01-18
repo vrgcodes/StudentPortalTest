@@ -27,8 +27,6 @@ The system supports the full detention lifecycle:
 - Providing administrators with oversight and verification tools
 - Providing students with access to past papers and an AI study bot.
 
-It is designed to be used daily, not as a one-off tool.
-
 ## Architecture
 
 The system is structured as a web-based application with:
