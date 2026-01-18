@@ -47,6 +47,7 @@ This project taught me a lot about:
 - Balancing simplicity with flexibility
 - Thinking about software as an operational tool
 - Maintaining clarity as a system grows beyond a single script
+- HTML, CSS, Javascript, NodeJS, AWS, and SQL.
 
 ## Notes
 
